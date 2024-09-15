@@ -16,14 +16,6 @@ sort_datakk = datakk.sort_values(by=['tahun', 'namakab', 'namakec', 'namadesa'],
 pilihankab = sort_datakk['namakab'].unique()
 
 pilihantahun = sort_datakk['tahun'].unique()
-# Ulasan
-kolom1, kolom2 = st.columns(2)
-
-with kolom1:
-st.write("ulasan bahasa indonesia Kecamatan {pilihkec}")
-
-with kolom2:
-st.write("description analysis of {pilihkec} subdistrict")
 
 # Pilihan tema warna
 warna_options = {

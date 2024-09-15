@@ -20,10 +20,10 @@ pilihantahun = sort_datakk['tahun'].unique()
 kolom1, kolom2 = st.columns(2)
 
 with kolom1:
-st.write(f"ulasan bahasa indonesia Kecamatan {pilihkec}")
+st.write("ulasan bahasa indonesia Kecamatan {pilihkec}")
 
 with kolom2:
-st.write(f"description analysis of {pilihkec} subdistrict")
+st.write("description analysis of {pilihkec} subdistrict")
 
 # Pilihan tema warna
 warna_options = {

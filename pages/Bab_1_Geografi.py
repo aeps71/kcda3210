@@ -1,4 +1,4 @@
-import streamlit as st
+cimport streamlit as st
 import pandas as pd
 import plotly_express as px
 import openpyxl
@@ -48,7 +48,7 @@ with kol1d:
 
 # JUMLAH KK
 with st.container(border=True):
-    st.info(f"{pilihdesa} Luas Wilayah Desa di Kecamatan {pilihkec}, {pilihkab} Tahun {pilihtahun} (Km2)")
+    st.info(f"{pilihkec} Luas Wilayah Desa di Kecamatan {pilihkec}, {pilihkab} Tahun {pilihtahun} (Km2)")
     kol1d, kol1e, kol1f = st.columns(3)
     if pilihkab and pilihkec and pilihtahun:
         tabelkk = datakk[(datakk['namakab'] == pilihkab) & (datakk['namakec'] == pilihkec) & (datakk['tahun'] == pilihtahun)]

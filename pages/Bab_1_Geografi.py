@@ -45,7 +45,7 @@ with kol1c:
     pilihtahun = st.selectbox("Filter Tahun", pilihantahun, key='tahun1')
 with kol1d:
     pilihwarna = st.selectbox("Pilih Tema Warna:", options=list(warna_options.keys()))
-pilihdesa1 = namadesa.iloc[0]
+pilihdesa1 = st.write(f"Desa {namadesa.iloc[0]}")
 # JUMLAH KK
 with st.container(border=True):
     st.info(f"Desa {pilihdesa1} adalah desa terluas di Kecamatan {pilihkec}, {pilihkab} Tahun {pilihtahun} (Km2)")

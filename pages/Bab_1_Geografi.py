@@ -49,6 +49,8 @@ with kol1d:
 # JUMLAH KK
 with st.container(border=True):
     st.info(f"Desa {namadesa.iloc[0]} adalah desa terluas di Kecamatan {namakec}, {namakab}. "")
+    st.success()
+    st.warning()
     kol1d, kol1e, kol1f = st.columns(3)
     if pilihkab and pilihkec and pilihtahun:
         tabelkk = datakk[(datakk['namakab'] == pilihkab) & (datakk['namakec'] == pilihkec) & (datakk['tahun'] == pilihtahun)]

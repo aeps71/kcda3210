@@ -83,7 +83,7 @@ with st.container(border=True):
             bar_kk2.update_layout(showlegend=False)
             with st.container(border=True):
                 st.plotly_chart(bar_kk2, use_container_width=True)
-            with st.container(border=True):
+        with st.container(border=True):
             desapertama = tabelkk2.iloc[0,0]
             st.subheader(f":green[DESA {desapertama}] ADALAH DESA TERLUAS DI KECAMATAN {pilihkec}, {pilihkab}")    
 

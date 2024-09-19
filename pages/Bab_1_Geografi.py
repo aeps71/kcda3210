@@ -47,14 +47,6 @@ with kol1d:
     pilihwarna = st.selectbox("Pilih Tema Warna:", options=list(warna_options.keys()))
 
 # JUMLAH KK
-# Mengurutkan desa berdasarkan luas dan mengambil desa teratas
-desa_teratas = tabelkk.sort_values(by='luas_desa', ascending=False)
-
-# Menentukan desa teratas
-pilihdesa1 = st.selectbox("Pilih Desa Teratas", desa_teratas['namadesa'].values)
-
-# Menampilkan informasi tentang desa yang dipilih
-
 with st.container(border=True):
     st.info(f"Luas Wilayah di Kecamatan {pilihkec}, {pilihkab} Tahun {pilihtahun} (Km2)")
     kol1d, kol1e, kol1f = st.columns(3)

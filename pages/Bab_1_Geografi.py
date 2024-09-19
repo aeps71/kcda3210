@@ -86,7 +86,7 @@ with st.container(border=True):
         with st.container(border=True):
             desapertama = tabelkk2.iloc[0,0]
             desaakhir = tabelkk2.iloc[-1,0]
-            st.subheader(f":green[Desa {desapertama}] adalah desa terluas, sedangkan Desa {desaakhir} adalah desa terkesil di Kecamatan {pilihkec}, {pilihkab}")    
+            st.subheader(f":green[Desa {desapertama}] adalah desa terluas, sedangkan Desa {desaakhir} adalah desa terkecil di Kecamatan {pilihkec}, {pilihkab}")    
 
 st.subheader("", divider='rainbow')
 with st.container(border=True):

@@ -51,8 +51,8 @@ with kol1d:
 with st.container(border=True):
     if pilihkab and pilihkec and pilihtahun:
         tabelkk = datakk[(datakk['namakab'] == pilihkab) & (datakk['namakec'] == pilihkec) & (datakk['tahun'] == pilihtahun)]
-        tabelkk2 = tabelkk[['namadesa', 'luas_desa']].sort_values(by='luas_desa', ascending=False)    
-    st.info(f"Desa {tabelkk2.iloc[-1,2]} adalah desa terluas di Kecamatan {pilihkec}, {pilihkab} Tahun {pilihtahun} (Km2)")
+        sort_desa1 = tabelkk[['namadesa', 'luas_desa']].sort_values(by='luas_desa', ascending=False)    
+    st.info(f"Desa {sort_desa1.iloc[-1,2]} adalah desa terluas di Kecamatan {pilihkec}, {pilihkab} Tahun {pilihtahun} (Km2)")
     kol1d, kol1e, kol1f = st.columns(3)
     if pilihkab and pilihkec and pilihtahun:
         tabelkk = datakk[(datakk['namakab'] == pilihkab) & (datakk['namakec'] == pilihkec) & (datakk['tahun'] == pilihtahun)]

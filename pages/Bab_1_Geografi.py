@@ -49,7 +49,7 @@ with kol1d:
 
 # JUMLAH KK
 with st.container(border=True):
-    st.info(f":green[DESA {desapertama}] ADALAH DESA TERLUAS DI KECAMATAN {pilihkec}, {pilihkab}")
+    st.info(f"Luas Desa di Kecamatan {pilihkec}, {pilihkab} (Km2)")
     kol1d, kol1e, kol1f = st.columns(3)
     if pilihkab and pilihkec and pilihtahun:
         tabelkk = datakk[(datakk['namakab'] == pilihkab) & (datakk['namakec'] == pilihkec) & (datakk['tahun'] == pilihtahun)]
@@ -89,7 +89,7 @@ with st.container(border=True):
 
 st.subheader("", divider='rainbow')
 with st.container(border=True):
-    st.info(f"Desa {sort_datakk.iloc[0,2]} adalah desa terluas di Kecamatan {pilihkec}, {pilihkab} Tahun {pilihtahun} (Km2)")
+    st.info(f"Luas Desa di Kecamatan {pilihkec}, {pilihkab} (Km2)")
     kol2a, kol2b = st.columns(2)
     trimep = px.treemap(tabelkk, path=['namakec', 'namadesa'], values='luas_desa', 
                         color_discrete_sequence=warna_options[pilihwarna])

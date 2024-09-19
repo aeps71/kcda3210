@@ -56,10 +56,7 @@ pilihdesa1 = st.selectbox("Pilih Desa Teratas", desa_teratas['namadesa'].values)
 # Menampilkan informasi tentang desa yang dipilih
 
 with st.container(border=True):
-    if pilihdesa1:
-    desa_info = tabelkk[['namadesa', 'luas_desa']].sort_values(by='luas_desa', ascending=False)
-    st.write(f"Luas Wilayah Desa {pilihdesa1}: {desa_info['luas_desa'].values[0]} Km², , {pilihkab} Tahun {pilihtahun}")
-   
+    st.info(f"Luas Wilayah di Kecamatan {pilihkec}, {pilihkab} Tahun {pilihtahun} (Km2)")
     kol1d, kol1e, kol1f = st.columns(3)
     if pilihkab and pilihkec and pilihtahun:
         tabelkk = datakk[(datakk['namakab'] == pilihkab) & (datakk['namakec'] == pilihkec) & (datakk['tahun'] == pilihtahun)]

@@ -49,6 +49,8 @@ with kol1d:
 
 # JUMLAH KK
 with st.container(border=True):
+            tabelkk = datakk[(datakk['namakab'] == pilihkab) & (datakk['namakec'] == pilihkec) & (datakk['tahun'] == pilihtahun)]
+        tabelkk2 = tabelkk[['namadesa', 'luas_desa']].sort_values(by='luas_desa', ascending=False)
     for index, row in tabelkk2.iterrows():
     st.info(f"Desa {row['namadesa']}, Luas Wilayah Desa di Kecamatan {pilihkec}, {pilihkab} Tahun {pilihtahun} (Km2)")
     kol1d, kol1e, kol1f = st.columns(3)

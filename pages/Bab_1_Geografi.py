@@ -53,7 +53,7 @@ with st.container(border=True):
     if pilihkab and pilihkec and pilihtahun:
         tabelkk = datakk[(datakk['namakab'] == pilihkab) & (datakk['namakec'] == pilihkec) & (datakk['tahun'] == pilihtahun)]
         tabelkk2 = tabelkk[['namadesa', 'luas_desa']].sort_values(by='luas_desa', ascending=False)
-        
+        st.write(f"Desa {namadesa.iloc[0]} adalah desa terluas di Kecamatan {namakec}, {namakab}. ")
         with kol1d:
             pie_kk = px.pie(tabelkk2, values='luas_desa', names='namadesa', 
                             color_discrete_sequence=warna_options[pilihwarna])

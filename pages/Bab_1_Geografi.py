@@ -89,7 +89,7 @@ with st.container(border=True):
 
 st.subheader("", divider='rainbow')
 with st.container(border=True):
-    st.info(f"Luas Wilayah di Kecamatan {pilihkec}, {pilihkab} Tahun {pilihtahun} (Km2)")
+    st.info(f"Desa {sort_datakk.iloc[0,2]} adalah desa terluas di Kecamatan {pilihkec}, {pilihkab} Tahun {pilihtahun} (Km2)")
     kol2a, kol2b = st.columns(2)
     trimep = px.treemap(tabelkk, path=['namakec', 'namadesa'], values='luas_desa', 
                         color_discrete_sequence=warna_options[pilihwarna])

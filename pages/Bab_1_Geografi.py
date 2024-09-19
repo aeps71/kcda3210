@@ -47,6 +47,7 @@ with kol1c:
 with kol1d:
     pilihwarna = st.selectbox("Pilih Tema Warna:", options=list(warna_options.keys()))
 
+ if pilihkab and pilihkec and pilihtahun:
 sort_desa1 = sort_datakk.sort_values(by=['tahun', 'namakab', 'namakec','luas_desa', 'namadesa'], ascending=[False,False,True,False,True])
 
 # JUMLAH KK

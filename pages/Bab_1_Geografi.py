@@ -12,7 +12,6 @@ st.subheader("", divider='rainbow')
 
 datakk = pd.read_excel("data/geografi_desa.xlsx")
 sort_datakk = datakk.sort_values(by=['tahun', 'namakab', 'namakec', 'namadesa'], ascending=[False,False,True,True])
-sort_desa1 = sort_datakk.sort_values(by=['tahun', 'namakab', 'namakec','luas_desa', 'namadesa'], ascending=[False,False,True,False,True])
 
 pilihankab = sort_datakk['namakab'].unique()
 
@@ -36,6 +35,8 @@ warna_options = {
     'RdBu': px.colors.diverging.RdBu,
     'Spectral': px.colors.diverging.Spectral
 }
+
+sort_desa1 = sort_datakk.sort_values(by=['tahun', 'namakab', 'namakec','luas_desa', 'namadesa'], ascending=[False,False,True,False,True])
 
 kol1a, kol1b, kol1c, kol1d = st.columns(4)
 with kol1a:

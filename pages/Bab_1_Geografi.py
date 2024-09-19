@@ -12,7 +12,6 @@ st.subheader("", divider='rainbow')
 
 datakk = pd.read_excel("data/geografi_desa.xlsx")
 sort_datakk = datakk.sort_values(by=['tahun', 'namakab', 'namakec', 'namadesa'], ascending=[False,False,True,True])
-sort_desa1 = datakk.sort_values(by=['tahun', 'namakab', 'namakec','luas_desa', 'namadesa'], ascending=[False,False,True,False,True])
 
 pilihankab = sort_datakk['namakab'].unique()
 
@@ -50,7 +49,6 @@ with kol1d:
 
 # JUMLAH KK
 with st.container(border=True):
-
     st.info(f"Desa {sort_desa1.iloc[-1,2]} adalah desa terluas di Kecamatan {pilihkec}, {pilihkab} Tahun {pilihtahun} (Km2)")
     kol1d, kol1e, kol1f = st.columns(3)
     if pilihkab and pilihkec and pilihtahun:
@@ -85,6 +83,9 @@ with st.container(border=True):
             bar_kk2.update_layout(showlegend=False)
             with st.container(border=True):
                 st.plotly_chart(bar_kk2, use_container_width=True)
+            with st.container(border=True):
+            desapertama = tabelkk2.iloc[0,0]
+            st.subheader(f":green[DESA {desapertama}] ADALAH DESA TERLUAS DI KECAMATAN {pilihkec}, {pilihkab}")    
 
 st.subheader("", divider='rainbow')
 with st.container(border=True):

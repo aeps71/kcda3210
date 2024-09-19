@@ -85,7 +85,8 @@ with st.container(border=True):
                 st.plotly_chart(bar_kk2, use_container_width=True)
         with st.container(border=True):
             desapertama = tabelkk2.iloc[0,0]
-            st.subheader(f":green[DESA {desapertama}] ADALAH DESA TERLUAS DI KECAMATAN {pilihkec}, {pilihkab}")    
+            desaakhir = tabelkk2.iloc[-1,0]
+            st.subheader(f":green[Desa {desapertama}] adalah desa terluas, sedangkan [Desa {desaakhir}] adalah desa terkesil di Kecamatan {pilihkec}, {pilihkab}")    
 
 st.subheader("", divider='rainbow')
 with st.container(border=True):

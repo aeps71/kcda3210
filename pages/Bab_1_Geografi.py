@@ -47,15 +47,19 @@ with kol1d:
     pilihwarna = st.selectbox("Pilih Tema Warna:", options=list(warna_options.keys()))
 
 # JUMLAH KK
+# Mengurutkan desa berdasarkan luas dan mengambil desa teratas
+desa_teratas = tabelkk.sort_values(by='luas_desa', ascending=False)
+
 # Menentukan desa teratas
-pilihdesa1 = st.selectbox("Pilih Desa Teratas", tabelkk2['namadesa'].values)
+pilihdesa1 = st.selectbox("Pilih Desa Teratas", desa_teratas['namadesa'].values)
 
 # Menampilkan informasi tentang desa yang dipilih
-if pilihdesa1:
-    desa_info = tabelkk2[tabelkk2['namadesa'] == pilihdesa1]
-    st.write(f"Luas Wilayah Desa {pilihdesa1}: {desa_info['luas_desa'].values[0]} Km²")
+
 with st.container(border=True):
-    st.info(f"{pilihdesa1} adalah desa terluas di Kecamatan {pilihkec}, {pilihkab} Tahun {pilihtahun} (Km2)")
+    if pilihdesa1:
+    desa_info = desa_teratas[desa_teratas['namadesa'] == pilihdesa1]
+    st.write(f"Luas Wilayah Desa {pilihdesa1}: {desa_info['luas_desa'].values[0]} Km², , {pilihkab} Tahun {pilihtahun}")
+   
     kol1d, kol1e, kol1f = st.columns(3)
     if pilihkab and pilihkec and pilihtahun:
         tabelkk = datakk[(datakk['namakab'] == pilihkab) & (datakk['namakec'] == pilihkec) & (datakk['tahun'] == pilihtahun)]

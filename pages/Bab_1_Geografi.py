@@ -48,7 +48,7 @@ with kol1d:
 
 # JUMLAH KK
 with st.container(border=True):
-
+    st.info(f"Luas Wilayah di Kecamatan {pilihkec}, {pilihkab} Tahun {pilihtahun} (Km2)")
     kol1d, kol1e, kol1f = st.columns(3)
     if pilihkab and pilihkec and pilihtahun:
         tabelkk = datakk[(datakk['namakab'] == pilihkab) & (datakk['namakec'] == pilihkec) & (datakk['tahun'] == pilihtahun)]
@@ -82,9 +82,7 @@ with st.container(border=True):
             bar_kk2.update_layout(showlegend=False)
             with st.container(border=True):
                 st.plotly_chart(bar_kk2, use_container_width=True)
-    st.info(f"Desa {namadesa.iloc[0]} adalah desa terluas di Kecamatan {namakec}, {namakab}. "")
-    st.success()
-    st.warning()
+
 st.subheader("", divider='rainbow')
 with st.container(border=True):
     st.info(f"Luas Wilayah di Kecamatan {pilihkec}, {pilihkab} Tahun {pilihtahun} (Km2)")

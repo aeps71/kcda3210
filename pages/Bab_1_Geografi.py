@@ -46,11 +46,10 @@ with kol1c:
     pilihtahun = st.selectbox("Filter Tahun", pilihantahun, key='tahun1')
 with kol1d:
     pilihwarna = st.selectbox("Pilih Tema Warna:", options=list(warna_options.keys()))
-
+pilihdesa = index, row in sort_datakk.iterrows()
 # JUMLAH KK
 with st.container(border=True):
-    for index, row in sort_datakk.iterrows():
-    st.info(f"Desa 'namadesa', Luas Wilayah Desa di Kecamatan {pilihkec}, {pilihkab} Tahun {pilihtahun} (Km2)")
+    st.info(f"Desa {pilihdesa}, Luas Wilayah Desa di Kecamatan {pilihkec}, {pilihkab} Tahun {pilihtahun} (Km2)")
     kol1d, kol1e, kol1f = st.columns(3)
     if pilihkab and pilihkec and pilihtahun:
         tabelkk = datakk[(datakk['namakab'] == pilihkab) & (datakk['namakec'] == pilihkec) & (datakk['tahun'] == pilihtahun)]

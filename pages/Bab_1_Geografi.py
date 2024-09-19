@@ -12,6 +12,7 @@ st.subheader("", divider='rainbow')
 
 datakk = pd.read_excel("data/geografi_desa.xlsx")
 sort_datakk = datakk.sort_values(by=['tahun', 'namakab', 'namakec', 'namadesa'], ascending=[False,False,True,True])
+sort_desa1 = datakk.sort_values(by=['tahun', 'namakab', 'namakec','luas_desa', 'namadesa'], ascending=[False,False,True,False,True])
 
 pilihankab = sort_datakk['namakab'].unique()
 
@@ -50,8 +51,6 @@ with kol1d:
 # JUMLAH KK
 with st.container(border=True):
     if pilihkab and pilihkec and pilihtahun:
-        tabelkk = datakk[(datakk['namakab'] == pilihkab) & (datakk['namakec'] == pilihkec) & (datakk['tahun'] == pilihtahun)]
-        sort_desa1 = tabelkk[['namadesa', 'luas_desa']].sort_values(by='luas_desa', ascending=False)    
     st.info(f"Desa {sort_desa1.iloc[-1,2]} adalah desa terluas di Kecamatan {pilihkec}, {pilihkab} Tahun {pilihtahun} (Km2)")
     kol1d, kol1e, kol1f = st.columns(3)
     if pilihkab and pilihkec and pilihtahun:

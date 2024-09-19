@@ -12,7 +12,7 @@ st.subheader("", divider='rainbow')
 
 datakk = pd.read_excel("data/geografi_desa.xlsx")
 sort_datakk = datakk.sort_values(by=['tahun', 'namakab', 'namakec', 'namadesa'], ascending=[False,False,True,True])
-sort_desa1 = datakk.sort_values(by=['tahun', 'namakab', 'namakec','luas_desa', 'namadesa'], descending=[False,False,True,True,False])
+sort_desa1 = datakk.sort_values(by=['tahun', 'namakab', 'namakec','luas_desa', 'namadesa'], desc=[False,False,True,True,False])
 
 pilihankab = sort_datakk['namakab'].unique()
 

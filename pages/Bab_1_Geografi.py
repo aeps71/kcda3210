@@ -36,8 +36,6 @@ warna_options = {
     'Spectral': px.colors.diverging.Spectral
 }
 
-sort_desa1 = sort_datakk.sort_values(by=['tahun', 'namakab', 'namakec','luas_desa', 'namadesa'], ascending=[False,False,True,False,True])
-
 kol1a, kol1b, kol1c, kol1d = st.columns(4)
 with kol1a:
     pilihkab = st.selectbox("Filter Kab/Kota", pilihankab, key='kab1')
@@ -48,6 +46,8 @@ with kol1c:
     pilihtahun = st.selectbox("Filter Tahun", pilihantahun, key='tahun1')
 with kol1d:
     pilihwarna = st.selectbox("Pilih Tema Warna:", options=list(warna_options.keys()))
+
+sort_desa1 = sort_datakk.sort_values(by=['tahun', 'namakab', 'namakec','luas_desa', 'namadesa'], ascending=[False,False,True,False,True])
 
 # JUMLAH KK
 with st.container(border=True):

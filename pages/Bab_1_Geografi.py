@@ -17,6 +17,7 @@ pilihankab = sort_datakk['namakab'].unique()
 
 pilihantahun = sort_datakk['tahun'].unique()
 
+
 # Pilihan tema warna
 warna_options = {
     'Viridis': px.colors.sequential.Viridis,
@@ -48,12 +49,12 @@ with kol1d:
 
 # JUMLAH KK
 with st.container(border=True):
-    st.info(f"Luas Wilayah di Kecamatan {pilihkec}, {pilihkab} Tahun {pilihtahun} (Km2)")
-    kol2a, kol2b = st.columns(2)
+    st.info(f"Luas Wilayah Desa di Kecamatan {pilihkec}, {pilihkab} Tahun {pilihtahun} (Km2)")
+    kol1d, kol1e, kol1f = st.columns(3)
     if pilihkab and pilihkec and pilihtahun:
         tabelkk = datakk[(datakk['namakab'] == pilihkab) & (datakk['namakec'] == pilihkec) & (datakk['tahun'] == pilihtahun)]
         tabelkk2 = tabelkk[['namadesa', 'luas_desa']].sort_values(by='luas_desa', ascending=False)
-       
+        
         with kol1d:
             pie_kk = px.pie(tabelkk2, values='luas_desa', names='namadesa', 
                             color_discrete_sequence=warna_options[pilihwarna])

@@ -49,6 +49,7 @@ with kol1d:
 # JUMLAH KK
 with st.container(border=True):
     st.info(f"Luas Wilayah di Kecamatan {pilihkec}, {pilihkab} Tahun {pilihtahun} (Km2)")
+    kol2a, kol2b = st.columns(2)
     if pilihkab and pilihkec and pilihtahun:
         tabelkk = datakk[(datakk['namakab'] == pilihkab) & (datakk['namakec'] == pilihkec) & (datakk['tahun'] == pilihtahun)]
         tabelkk2 = tabelkk[['namadesa', 'luas_desa']].sort_values(by='luas_desa', ascending=False)

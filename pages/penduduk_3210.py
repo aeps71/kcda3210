@@ -35,7 +35,7 @@ with st.container(border=True):
        pilihkec = st.selectbox("Filter Kecamatan", pilihankec, key='kec1')    
 
     if tahunterpilih:
-        st.subheader(f"Sebaran Penduduk di Kabupaten Majalengka, Tahun {tahunterpilih}")
+        st.subheader(f"Sebaran Penduduk di Kecamatan {pilihkec}, Tahun {tahunterpilih}")
 
         fig = px.choropleth_mapbox(
             data_frame=data[(data['tahun'] == tahunterpilih)],

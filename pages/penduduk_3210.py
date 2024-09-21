@@ -27,7 +27,7 @@ with st.container(border=True):
     kolom1, kolom2 = st.columns(2)
     data = data.sort_values(by=['tahun'], ascending=False)
     pilihantahun = data['tahun'].unique()
-    pilihankec = sort_datakk[sort_datakk['namakab'] == pilihkab]['namakec'].unique()
+     pilihankec = data['namakec'].unique()
      
     with kolom1:
         tahunterpilih = st.selectbox("Filter Tahun", pilihantahun)

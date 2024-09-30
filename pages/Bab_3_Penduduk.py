@@ -77,49 +77,12 @@ with st.container(border=True):
             with st.container(border=True):
                 st.plotly_chart(bar_kk, use_container_width=True)
         with kol1f:
-            bar_kk = alt.binding_range(tabelkk2, x='gender', y='jumlah_penduduk)
-
-            base = alt.Chart(source).add_params(
-                select_year
-            ).transform_filter(
-                select_year
-            ).transform_calculate(
-                gender=alt.expr.if_(alt.datum.sex == 1, 'Male', 'Female')
-            ).properties(
-                width=250
-            )
-            
-            
-            color_scale = alt.Scale(domain=['Male', 'Female'],
-                                    range=['#1f77b4', '#e377c2'])
-            
-            left = base.transform_filter(
-                alt.datum.gender == 'Female'
-            ).encode(
-                alt.Y('age:O').axis(None),
-                alt.X('sum(people):Q')
-                    .title('population')
-                    .sort('descending'),
-                alt.Color('gender:N')
-                    .scale(color_scale)
-                    .legend(None)
-            ).mark_bar().properties(title='Female')
-            
-            middle = base.encode(
-                alt.Y('age:O').axis(None),
-                alt.Text('age:Q'),
-            ).mark_text().properties(width=20)
-            
-            right = base.transform_filter(
-                alt.datum.gender == 'Male'
-            ).encode(
-                alt.Y('age:O').axis(None),
-                alt.X('sum(people):Q').title('population'),
-                alt.Color('gender:N').scale(color_scale).legend(None)
-            ).mark_bar().properties(title='Male')
-            
-            alt.concat(left, middle, right, spacing=5)
-
+            bar_kk2 = px.bar(tabelkk2, x='jumlah_penduduk', y='namadesa', color='namadesa',
+                            text='jumlah_penduduk', orientation='h',           
+                            color_discrete_sequence=warna_options[pilihwarna])
+            bar_kk2.update_layout(showlegend=False)
+            with st.container(border=True):
+                st.plotly_chart(bar_kk2, use_container_width=True)
 st.subheader("", divider='rainbow')
 with st.container(border=True):
     st.info(f"Jumlah Penduduk di Kecamatan {pilihkec}, {pilihkab} Tahun {pilihtahun}")

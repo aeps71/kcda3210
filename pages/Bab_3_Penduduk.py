@@ -77,7 +77,7 @@ with st.container(border=True):
             with st.container(border=True):
                 st.plotly_chart(bar_kk, use_container_width=True)
         with kol1f:
-            slider = alt.binding_range(min=1850, max=2000, step=10)
+            slider = alt.binding_range(min=150, max=200, step=10)
             select_year = alt.selection_point(name='year', fields=['year'],
                                                bind=slider, value={'year': 2000})
             

@@ -1,5 +1,7 @@
-import altair as alt
-from vega_datasets import data
+import streamlit as st
+import pandas as pd
+import plotly_express as px
+import openpyxl
 
 datakk = pd.read_excel("data/penduduk_jk.xlsx")
 sort_datakk = datakk.sort_values(by=['tahun', 'namakab', 'namakec', 'namadesa'], ascending=[False,True,True,True])

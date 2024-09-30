@@ -10,7 +10,7 @@ pilihankab = sort_datakk['namakab'].unique()
 
 pilihantahun = sort_datakk['tahun'].unique()
 
-slider = alt.binding_range(min=1850, max=2000, step=10)
+
 select_year = alt.selection_point(name='year', fields=['year'],
                                    bind=slider, value={'year': 2000})
 

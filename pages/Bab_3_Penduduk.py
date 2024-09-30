@@ -77,7 +77,7 @@ with st.container(border=True):
             with st.container(border=True):
                 st.plotly_chart(bar_kk, use_container_width=True)
         with kol1f:
-            slider = alt.binding_range(tabelkk2, x='gender', y='jumlah_penduduk)
+            bar_kk = alt.binding_range(tabelkk2, x='gender', y='jumlah_penduduk)
 
             base = alt.Chart(source).add_params(
                 select_year

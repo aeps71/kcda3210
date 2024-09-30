@@ -77,7 +77,12 @@ with st.container(border=True):
             with st.container(border=True):
                 st.plotly_chart(bar_kk, use_container_width=True)
         with kol1f:
-
+            bar_kk2 = px.bar(tabelkk2, x='jumlah_penduduk', y='namadesa', color='namadesa',
+                            text='jumlah_penduduk', orientation='h',           
+                            color_discrete_sequence=warna_options[pilihwarna])
+            bar_kk2.update_layout(showlegend=False)
+            with st.container(border=True):
+                st.plotly_chart(bar_kk2, use_container_width=True)
 
 st.subheader("", divider='rainbow')
 with st.container(border=True):

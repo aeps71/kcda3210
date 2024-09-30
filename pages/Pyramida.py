@@ -10,10 +10,6 @@ pilihankab = sort_datakk['namakab'].unique()
 
 pilihantahun = sort_datakk['tahun'].unique()
 
-
-select_year = alt.selection_point(name='year', fields=['year'],
-                                   bind=slider, value={'year': 2000})
-
 base = alt.Chart(datakk).add_params(
     select_year
 ).transform_filter(

@@ -1,13 +1,18 @@
 import altair as alt
 from vega_datasets import data
 
-source = data.population.url
+datakk = pd.read_excel("data/penduduk_jk.xlsx")
+sort_datakk = datakk.sort_values(by=['tahun', 'namakab', 'namakec', 'namadesa'], ascending=[False,True,True,True])
+
+pilihankab = sort_datakk['namakab'].unique()
+
+pilihantahun = sort_datakk['tahun'].unique()
 
 slider = alt.binding_range(min=1850, max=2000, step=10)
 select_year = alt.selection_point(name='year', fields=['year'],
                                    bind=slider, value={'year': 2000})
 
-base = alt.Chart(source).add_params(
+base = alt.Chart(datakk).add_params(
     select_year
 ).transform_filter(
     select_year

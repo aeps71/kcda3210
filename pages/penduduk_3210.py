@@ -28,7 +28,8 @@ with st.container(border=True):
     data = data.sort_values(by=['tahun'], ascending=False)
     pilihantahun = data['tahun'].unique()
     pilihankec = data['kecamatan'].unique()
-     
+    pilihandesa = data['desa'].unique() 
+    
     with kolom1:
         tahunterpilih = st.selectbox("Filter Tahun", pilihantahun)
     with kolom2:
@@ -38,7 +39,7 @@ with st.container(border=True):
         st.subheader(f"Sebaran Penduduk di Kecamatan {pilihkec}, Tahun {tahunterpilih}")
 
         fig = px.choropleth_mapbox(
-            data_frame=data[(data['tahun'] == tahunterpilih)],
+            data_frame=data[(data['tahun'] == tahunterpilih), (data['kecamatan'] == pilihkec)],
             geojson=geojson_data,
             locations="KODE_KD",
             color="total_pend",

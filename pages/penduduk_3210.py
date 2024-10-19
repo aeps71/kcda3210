@@ -7,7 +7,7 @@ import requests
 st.set_page_config(layout='wide')
 
 geojson_data = requests.get(
-    "master/desa3210.json"
+    "https://raw.githubusercontent.com/firmanh3200/batas-administrasi-indonesia/refs/heads/master/Kel_Desa/desa3210.json"
 ).json()
 
 data = pd.read_csv(

@@ -28,8 +28,7 @@ with st.container(border=True):
     data = data.sort_values(by=['tahun'], ascending=False)
     pilihantahun = data['tahun'].unique()
     pilihankec = data['kecamatan'].unique()
-    pilihandesa = data['desa'].unique() 
-    
+
     with kolom1:
         tahunterpilih = st.selectbox("Filter Tahun", pilihantahun)
     with kolom2:

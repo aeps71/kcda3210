@@ -7,7 +7,7 @@ import requests
 st.set_page_config(layout='wide')
 
 geojson_data = requests.get(
-    "https://raw.githubusercontent.com/firmanh3200/batas-administrasi-indonesia/refs/heads/master/Kel_Desa/desa3210.json"
+    "../master/desa3210.json"
 ).json()
 
 data = pd.read_csv(
@@ -38,7 +38,7 @@ with st.container(border=True):
         st.subheader(f"Sebaran Penduduk di Kecamatan {pilihkec}, Tahun {tahunterpilih}")
 
         fig = px.choropleth_mapbox(
-            data_frame=data[(data['tahun'] == tahunterpilih, data['kecamatan'] == kecterpilih)],
+            data_frame=data[(data['tahun'] == tahunterpilih],
             geojson=geojson_data,
             locations="KODE_KD",
             color="total_pend",

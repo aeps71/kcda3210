@@ -7,7 +7,7 @@ import requests
 st.set_page_config(layout='wide')
 
 geojson_data = requests.get(
-    "/master/desa3210.json"
+    "master/desa3210.json"
 ).json()
 
 data = pd.read_csv(
